@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Destek · Decouva</title>
   <meta name="description" content="Decouva destek: iletişim ve sık sorulan sorular.">
-  <meta name="theme-color" content="#f3efe7" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f6f5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/style.css?v=4">
+  <link rel="stylesheet" href="/assets/style.css?v=5">
 </head>
 <body>
   <a class="skip" href="#icerik">İçeriğe geç</a>
@@ -25,6 +25,7 @@
       </a>
       <nav aria-label="Ana menü">
         <a href="/#nasil">Nasıl işliyor</a>
+        <a class="opt" href="/#gunluk">Günlük</a>
         <a href="/destek" aria-current="page">Destek</a>
       </nav>
     </div>
@@ -32,53 +33,57 @@
 
   <main id="icerik" class="help wrap">
     <aside class="help__aside">
-      <p class="kicker">Destek</p>
-      <h1>Bir sorun mu var? Yaz, cevaplayalım.</h1>
-      <div class="postcard">
-        <img class="postcard__stamp" src="/assets/stamps/baklava.webp" alt="" width="520" height="520">
-        <svg class="postmark" viewBox="0 0 120 120" aria-hidden="true">
-          <defs><path id="pm-arc" d="M 14 60 A 46 46 0 1 1 106 60"/></defs>
-          <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="3"/>
-          <circle cx="60" cy="60" r="37" fill="none" stroke="currentColor" stroke-width="1.6"/>
-          <text font-family="Plex Mono, monospace" font-size="10.5" font-weight="500" letter-spacing="2.2" fill="currentColor"><textPath href="#pm-arc" startOffset="50%" text-anchor="middle">DESTEK · DECOUVA</textPath></text>
-          <text x="60" y="65" text-anchor="middle" font-family="Plex Mono, monospace" font-size="14" font-weight="500" fill="currentColor">2026</text>
-        </svg>
-        <p class="postcard__to">Kime: Decouva destek</p>
-        <div class="postcard__lines">
-          <p><a href="mailto:destek@decouva.com">destek@decouva.com</a></p>
-          <p class="hint">Uygulamadan: Profil → Bize ulaş</p>
+      <p class="eyebrow">Destek</p>
+      <h1 class="display">Bir sorun mu var? Yaz, cevaplayalım.</h1>
+      <div class="group">
+        <a class="group__row" href="mailto:destek@decouva.com">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-mail"/></svg>
+          <span><small>E-posta</small><strong>destek@decouva.com</strong></span>
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-right"/></svg>
+        </a>
+        <div class="group__row">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-message-circle"/></svg>
+          <span><small>Uygulamadan</small>Profil → Bize ulaş</span>
         </div>
       </div>
+
+      <p class="group__label">Sık sorulanlar</p>
+      <ul class="help__index">
+        <li><a href="#sifre">Şifremi unuttum</a></li>
+        <li><a href="#dogrulama">E-posta doğrulama</a></li>
+        <li><a href="#hesap-silme">Hesabı silme</a></li>
+        <li><a href="#bildirme">Yorum bildirme</a></li>
+        <li><a href="#engelleme">Kullanıcı engelleme</a></li>
+        <li><a href="#kvkk">Kişisel veri başvurusu</a></li>
+      </ul>
     </aside>
 
-    <section aria-labelledby="sss">
-      <p class="kicker" id="sss">Sık sorulanlar</p>
-      <div class="qa">
-        <article>
-          <h2>Şifremi unuttum, ne yapmalıyım?</h2>
-          <p>Giriş ekranında "Şifremi unuttum"a dokun, kullanıcı adını ya da e-posta adresini gir. E-postana 6 haneli bir kod gelir; kodu uygulamaya girip yeni şifreni belirle. Kod 15 dakika geçerlidir. Kod gelmezse spam klasörüne bak ve yazdığın bilgiyi kontrol et.</p>
-        </article>
-        <article>
-          <h2>E-posta adresimi nasıl doğrularım?</h2>
-          <p>Kayıt olduğunda e-postana bir doğrulama kodu gönderiyoruz. Profil'deki "E-postanı doğrula" hatırlatmasına dokunup kodu gir. Kod gelmediyse aynı ekrandan yeni kod isteyebilirsin.</p>
-        </article>
-        <article>
-          <h2>Hesabımı nasıl silerim?</h2>
-          <p>Uygulamada Profil → Hesabı sil. Şifreni girerek onaylarsın. Hesabınla birlikte puanların, yorumların, fotoğrafların ve istek listen kalıcı olarak silinir; geri getirilemez. Uygulamaya erişemiyorsan hesabına kayıtlı e-posta adresinden <a href="mailto:destek@decouva.com">destek@decouva.com</a>'a yaz, silme talebini sonuçlandıralım.</p>
-        </article>
-        <article>
-          <h2>Uygunsuz bir yorumu nasıl bildiririm?</h2>
-          <p>Yorumun yanındaki "⋯" menüsünden "Bildir"i seç ve sebebini işaretle. Bildirdiğin yorum sana artık gösterilmez; biz de inceleriz ve kurala aykırıysa kaldırırız.</p>
-        </article>
-        <article>
-          <h2>Bir kullanıcıyı nasıl engellerim?</h2>
-          <p>Yorumun yanındaki "⋯" menüsünden "Engelle"yi seç. Engellediğin kişinin yorumlarını görmezsin, o da seninkileri görmez. Engeli Profil → Engellenenler'den kaldırabilirsin.</p>
-        </article>
-        <article>
-          <h2>Kişisel verilerimle ilgili nasıl başvururum?</h2>
-          <p>KVKK kapsamındaki başvurularını hesabına kayıtlı e-posta adresinden <a href="mailto:destek@decouva.com">destek@decouva.com</a>'a gönderebilirsin. Ayrıntılar <a href="/gizlilik">Gizlilik Politikası</a>'nda.</p>
-        </article>
-      </div>
+    <section class="qa" aria-labelledby="sss">
+      <p class="eyebrow" id="sss">Sık sorulanlar</p>
+      <article id="sifre">
+        <h2>Şifremi unuttum, ne yapmalıyım?</h2>
+        <p>Giriş ekranında "Şifremi unuttum"a dokun, kullanıcı adını ya da e-posta adresini gir. E-postana 6 haneli bir kod gelir; kodu uygulamaya girip yeni şifreni belirle. Kod 15 dakika geçerlidir. Kod gelmezse spam klasörüne bak ve yazdığın bilgiyi kontrol et.</p>
+      </article>
+      <article id="dogrulama">
+        <h2>E-posta adresimi nasıl doğrularım?</h2>
+        <p>Kayıt olduğunda e-postana bir doğrulama kodu gönderiyoruz. Profil'deki "E-postanı doğrula" hatırlatmasına dokunup kodu gir. Kod gelmediyse aynı ekrandan yeni kod isteyebilirsin.</p>
+      </article>
+      <article id="hesap-silme">
+        <h2>Hesabımı nasıl silerim?</h2>
+        <p>Uygulamada Profil → Hesabı sil. Şifreni girerek onaylarsın. Hesabınla birlikte puanların, yorumların, fotoğrafların ve istek listen kalıcı olarak silinir; geri getirilemez. Uygulamaya erişemiyorsan hesabına kayıtlı e-posta adresinden <a href="mailto:destek@decouva.com">destek@decouva.com</a>'a yaz, silme talebini sonuçlandıralım.</p>
+      </article>
+      <article id="bildirme">
+        <h2>Uygunsuz bir yorumu nasıl bildiririm?</h2>
+        <p>Yorumun yanındaki "⋯" menüsünden "Bildir"i seç ve sebebini işaretle. Bildirdiğin yorum sana artık gösterilmez; biz de inceleriz ve kurala aykırıysa kaldırırız.</p>
+      </article>
+      <article id="engelleme">
+        <h2>Bir kullanıcıyı nasıl engellerim?</h2>
+        <p>Yorumun yanındaki "⋯" menüsünden "Engelle"yi seç. Engellediğin kişinin yorumlarını görmezsin, o da seninkileri görmez. Engeli Profil → Engellenenler'den kaldırabilirsin.</p>
+      </article>
+      <article id="kvkk">
+        <h2>Kişisel verilerimle ilgili nasıl başvururum?</h2>
+        <p>KVKK kapsamındaki başvurularını hesabına kayıtlı e-posta adresinden <a href="mailto:destek@decouva.com">destek@decouva.com</a>'a gönderebilirsin. Ayrıntılar <a href="/gizlilik">Gizlilik Politikası</a>'nda.</p>
+      </article>
     </section>
   </main>
 

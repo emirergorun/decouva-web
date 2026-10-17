@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Decouva · Restoranı değil, yemeği puanla</title>
-  <meta name="description" content="Decouva, yediğin yemekleri tek tek puanladığın yemek günlüğü. İstanbul’un en iyi yemeklerini bul, puanla, günlüğüne pul olarak ekle.">
-  <meta name="theme-color" content="#f3efe7" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Decouva, yediğin yemekleri tek tek puanladığın yemek günlüğü. Şehrin en iyi yemeklerini bul, puanla, günlüğünde biriktir.">
+  <meta name="theme-color" content="#f6f6f5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -16,8 +16,8 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preload" href="/assets/fonts/Urbanist-SemiBold.woff" as="font" type="font/woff" crossorigin>
-  <link rel="stylesheet" href="/assets/style.css?v=4">
+  <link rel="preload" href="/assets/fonts/Urbanist-Black.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/assets/style.css?v=5">
 </head>
 <body>
   <a class="skip" href="#icerik">İçeriğe geç</a>
@@ -32,91 +32,255 @@
       </a>
       <nav aria-label="Ana menü">
         <a href="#nasil">Nasıl işliyor</a>
+        <a class="opt" href="#gunluk">Günlük</a>
         <a href="/destek">Destek</a>
       </nav>
     </div>
   </header>
 
   <main id="icerik">
+    <!-- Giriş: tanıtımın ilk sayfası (A1) ve telefonda Keşfet -->
     <section class="hero wrap">
       <div class="hero__text">
-        <p class="kicker">Yemek günlüğü · İstanbul</p>
-        <h1>Restoranı değil, <em>yemeği</em> puanla.</h1>
-        <p class="lead">Yediğin her yemeğe ayrı puan ver, günlüğüne pul olarak ekle. Şehrin en iyi yemeklerini, onları gerçekten yiyenlerin puanlarıyla bul.</p>
-        <div class="hero__cta">
-          <span class="inkstamp">Yakında App Store’da</span>
-          <a class="textlink" href="#nasil">Nasıl işliyor?</a>
+        <h1 class="display">
+          <span class="sr">Şehrin en iyi baklavası nerede?</span>
+          <span aria-hidden="true">
+            <span class="line">Şehrin en iyi</span>
+            <span class="line rotor"><span>baklavası</span><span>pizzası</span><span>dürümü</span><span>burgeri</span></span>
+            <span class="line">nerede?</span>
+          </span>
+        </h1>
+        <p class="lead">Decouva’da puan restorana değil, yemeğe verilir. Yediğini puanla, günlüğünde biriktir; şehrin en iyisini onu gerçekten yiyenlerden öğren.</p>
+        <div class="hero__meta">
+          <p class="soon">iPhone için · Yakında App Store’da</p>
+          <a class="textlink" href="#nasil"><span>Nasıl işliyor?</span><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-arrow-down"/></svg></a>
         </div>
       </div>
 
-      <div class="collage" aria-hidden="true">
-        <img class="s1" src="/assets/stamps/burger.webp" alt="" width="520" height="520">
-        <img class="s2" src="/assets/stamps/baklava.webp" alt="" width="520" height="520">
-        <img class="s3" src="/assets/stamps/pizza.webp" alt="" width="520" height="520">
-        <img class="s4" src="/assets/stamps/durum.webp" alt="" width="520" height="520">
-        <svg class="postmark" viewBox="0 0 120 120">
-          <defs><path id="pm-arc" d="M 14 60 A 46 46 0 1 1 106 60"/></defs>
-          <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="3"/>
-          <circle cx="60" cy="60" r="37" fill="none" stroke="currentColor" stroke-width="1.6"/>
-          <text font-family="Plex Mono, monospace" font-size="10.5" font-weight="500" letter-spacing="2.2" fill="currentColor"><textPath href="#pm-arc" startOffset="50%" text-anchor="middle">İSTANBUL · DECOUVA</textPath></text>
-          <text x="60" y="65" text-anchor="middle" font-family="Plex Mono, monospace" font-size="14" font-weight="500" fill="currentColor">2026</text>
-        </svg>
+      <div class="hero__device">
+        <div class="phone" role="img" aria-label="Decouva uygulamasında Keşfet ekranı: Kadıköy’de en iyi puanlı yemekler">
+          <div class="phone__body" aria-hidden="true">
+            <div class="screen">
+              <div class="island"></div>
+              <div class="status"><span>9:41</span><svg><use href="/assets/icons.svg#i-status"/></svg></div>
+              <div class="d-head s-pad">
+                <img src="/assets/wordmark-orange.svg" alt="" width="106" height="18">
+                <span class="d-loc"><svg class="icon"><use href="/assets/icons.svg#i-map-pin"/></svg>Kadıköy<svg class="icon"><use href="/assets/icons.svg#i-chevron-down"/></svg></span>
+              </div>
+              <div class="chips s-pad">
+                <span class="chip on">Tümü</span><span class="chip">Burger</span><span class="chip">Pizza</span><span class="chip">Tatlı</span><span class="chip">Kebap</span><span class="chip">Çorba</span>
+              </div>
+              <div class="d-section s-pad">
+                <p class="s-title">Kadıköy’de En İyiler</p>
+                <p class="s-caption">Konumuna yakın, yüksek puanlı lezzetler</p>
+                <div class="d-lead">
+                  <img class="s-photo" src="/assets/photos/baklava.webp" alt="" width="360" height="360">
+                  <div class="d-lead__row"><span class="d-rank">1</span><span class="d-lead__name">Fıstıklı Baklava</span><span class="s-rating"><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg>4.9</span></div>
+                  <p class="s-caption d-lead__meta">Baklavacı Cemil · Kadıköy</p>
+                </div>
+                <div class="d-rows">
+                  <div class="d-row"><span class="d-rank">2</span><img class="s-photo" src="/assets/photos/pizza.webp" alt="" width="360" height="360"><div class="d-row__text"><p class="s-name">Margherita</p><p class="s-caption">Fırın Napoli · Moda</p></div><span class="s-rating"><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg>4.8</span></div>
+                  <div class="d-row"><span class="d-rank">3</span><img class="s-photo" src="/assets/photos/burger.webp" alt="" width="360" height="360"><div class="d-row__text"><p class="s-name">Smash Burger</p><p class="s-caption">Burger Atölyesi · Kadıköy</p></div><span class="s-rating"><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg>4.7</span></div>
+                  <div class="d-row"><span class="d-rank">4</span><img class="s-photo" src="/assets/photos/durum.webp" alt="" width="360" height="360"><div class="d-row__text"><p class="s-name">Adana Dürüm</p><p class="s-caption">Ocakbaşı Ali Usta · Kadıköy</p></div><span class="s-rating"><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg>4.6</span></div>
+                </div>
+              </div>
+              <nav class="tabbar">
+                <span class="tab on"><svg class="icon"><use href="/assets/icons.svg#i-home-filled"/></svg>Keşfet</span>
+                <span class="tab"><svg class="icon"><use href="/assets/icons.svg#i-search"/></svg>Ara</span>
+                <span class="tab-plus"><svg class="icon"><use href="/assets/icons.svg#i-plus"/></svg></span>
+                <span class="tab"><svg class="icon"><use href="/assets/icons.svg#i-notebook"/></svg>Günlük</span>
+                <span class="tab"><svg class="icon"><use href="/assets/icons.svg#i-user"/></svg>Profil</span>
+              </nav>
+              <div class="home-bar"></div>
+            </div>
+          </div>
+        </div>
+        <img class="hero__stamp" src="/assets/stamps/pizza.webp" alt="" width="520" height="520">
       </div>
     </section>
 
-    <section id="nasil" class="how wrap">
-      <div>
-        <p class="kicker">Neden yemek?</p>
-        <h2>Bir restoranın kebabı efsane, salatası berbat olabilir.</h2>
-        <p>Restoranın puanı, menüsündeki her şeyin ortalaması. İyi olanı da kötü olanı da aynı sayıya karışır. Decouva’da puan yemeğin kendisine verilir; “Kadıköy’de en iyi mercimek çorbası nerede?” sorusunun cevabı, o çorbayı içenlerin puanlarında.</p>
-        <p>Puanladıkların günlüğünde birikir. Neyi nerede yediğini, neyi sevdiğini unutmazsın.</p>
+    <!-- Neden yemek: restoran ortalaması ile tabak tabak puan -->
+    <section class="why wrap" aria-labelledby="neden">
+      <div class="why__copy reveal">
+        <p class="eyebrow">Neden yemek?</p>
+        <h2 class="display" id="neden">Bir restoranın kebabı efsane, salatası berbat olabilir.</h2>
+        <p>Restoranın puanı, menüdeki her şeyin ortalaması; iyi olanla kötü olan aynı sayıda kaybolur. Decouva’da her yemeğin kendi puanı var.</p>
+        <p>“Kadıköy’de en iyi mercimek çorbası nerede?” sorusunun cevabı, o çorbayı içenlerin puanlarında.</p>
       </div>
 
-      <figure class="receipt" aria-label="Decouva nasıl işliyor">
-        <div class="receipt__paper">
-          <p class="receipt__head">DECOUVA</p>
-          <p class="receipt__sub">NASIL İŞLİYOR · NO. 0001</p>
-          <hr>
-          <ol>
-            <li><span>01</span><span>Yemeği bul<small>Yakınındaki en sevilen yemekler, kategoriye ve ilçeye göre.</small></span></li>
-            <li><span>02</span><span>Puanla<small>Yediğine 0.5 ile 5.0 arası puan ver.</small></span></li>
-            <li><span>03</span><span>İstersen yaz<small>Kısa bir yorum, bir fotoğraf.</small></span></li>
-            <li><span>04</span><span>Pulu yapıştır<small>Yemek günlüğüne pul olarak eklenir.</small></span></li>
-          </ol>
-          <hr>
-          <p class="receipt__total"><span>TOPLAM</span><span>Yemeğin kendi puanı</span></p>
-          <p class="receipt__foot">AFİYET OLSUN · DECOUVA.COM</p>
+      <figure class="ledger" aria-label="Örnek: aynı restoranın yemekleri tek tek puanlanınca">
+        <div class="ledger__head">
+          <p class="ledger__place"><strong>Ocakbaşı Ali Usta</strong>Kadıköy</p>
+          <p class="ledger__avg"><b class="num">4.2</b>restoran ortalaması</p>
         </div>
+        <ol>
+          <li>
+            <p class="ledger__dish">Adana Kebap<small>Mükemmel</small></p>
+            <span class="stars" aria-label="5 üzerinden 5 yıldız"><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg></span>
+            <span class="ledger__score num">4.9</span>
+          </li>
+          <li>
+            <p class="ledger__dish">Mercimek Çorbası<small>Harika</small></p>
+            <span class="stars" aria-label="5 üzerinden 4,5 yıldız"><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-half-filled"/></svg></span>
+            <span class="ledger__score num">4.7</span>
+          </li>
+          <li>
+            <p class="ledger__dish">Künefe<small>Harika</small></p>
+            <span class="stars" aria-label="5 üzerinden 4,5 yıldız"><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-half-filled"/></svg></span>
+            <span class="ledger__score num">4.5</span>
+          </li>
+          <li class="low">
+            <p class="ledger__dish">Çoban Salata<small>İdare eder</small></p>
+            <span class="stars" aria-label="5 üzerinden 2,5 yıldız"><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-half-filled"/></svg><svg class="icon off"><use href="/assets/icons.svg#i-star"/></svg><svg class="icon off"><use href="/assets/icons.svg#i-star"/></svg></span>
+            <span class="ledger__score num">2.5</span>
+          </li>
+        </ol>
+        <figcaption class="ledger__note">Örnek restoran ve puanlar.</figcaption>
       </figure>
     </section>
 
-    <section class="album wrap" aria-labelledby="album-baslik">
-      <div class="album__head">
-        <div>
-          <p class="kicker">Günlük</p>
-          <h2 id="album-baslik">Yediklerin, pul pul.</h2>
-        </div>
-        <p>Puanladığın her yemek günlüğüne bir pul olarak eklenir, ay ay birikir. Pula dokununca puanın, yorumun ve tarihi açılır; damgası üstünde.</p>
-      </div>
+    <!-- Nasıl işliyor: iki adım telefonda, üçüncüsü Günlük bandı -->
+    <section id="nasil" class="how wrap" aria-labelledby="nasil-baslik">
+      <header class="reveal">
+        <p class="eyebrow">Nasıl işliyor?</p>
+        <h2 class="display" id="nasil-baslik">Bul, puanla, unutma.</h2>
+      </header>
 
-      <div class="sheet-page">
-        <div class="sheet-page__bar"><span>Ekim 2026</span><span>6 pul</span></div>
+      <article class="step">
+        <div class="step__text reveal">
+          <p class="step__num">01</p>
+          <h3>Yemeği bul</h3>
+          <p>Keşfet, yakınındaki en sevilen yemekleri kategoriye ve ilçeye göre sıralar. Bir yemeğe dokun: puanı, yorumları ve nerede yendiği karşında.</p>
+        </div>
+        <div class="phone" role="img" aria-label="Yemek paneli: Smash Burger, Burger Atölyesi, puan 4.6">
+          <div class="crop">
+            <div class="phone__body" aria-hidden="true">
+              <div class="screen">
+                <div class="island"></div>
+                <div class="status"><span>9:41</span><svg><use href="/assets/icons.svg#i-status"/></svg></div>
+                <div class="veil"></div>
+                <div class="sheet">
+                  <div class="sheet__photo">
+                    <img class="s-photo" src="/assets/photos/burger-wide.webp" alt="" width="720" height="533" loading="lazy">
+                    <span class="sheet__handle"></span>
+                  </div>
+                  <div class="sheet__body">
+                    <p class="sheet__name">Smash Burger</p>
+                    <p class="sheet__place">Burger Atölyesi<svg class="icon"><use href="/assets/icons.svg#i-chevron-right"/></svg></p>
+                    <p class="s-caption">Moda, Kadıköy · Burger</p>
+                    <div class="sheet__score">
+                      <span class="sheet__big">4.6</span>
+                      <div>
+                        <span class="stars"><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-half-filled"/></svg></span>
+                        <p class="s-caption">128 değerlendirme</p>
+                      </div>
+                    </div>
+                    <div class="sheet__rule"></div>
+                    <p class="s-title">Son Yorumlar</p>
+                    <div class="review">
+                      <div class="review__head">
+                        <span class="review__who">@denizkaya</span>
+                        <span class="stars"><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg></span>
+                      </div>
+                      <p>Turşusu efsane, ekmeği tereyağında kızarmış. Patatesi ayrıca söyleyin.</p>
+                      <p class="s-caption">3 gün önce</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="step step--flip">
+        <div class="step__text reveal">
+          <p class="step__num">02</p>
+          <h3>Puanla</h3>
+          <p>Yediğine 0.5 ile 5.0 arasında puan ver; istersen iki satır yaz, bir fotoğraf ekle. Puanlarken başkalarının puanını görmezsin, karar senin.</p>
+        </div>
+        <div class="phone" role="img" aria-label="Puanlama ekranı: Nasıldı? Adana Dürüm, 4.5, Harika">
+          <div class="crop">
+            <div class="phone__body" aria-hidden="true">
+              <div class="screen">
+                <div class="island"></div>
+                <div class="status"><span>9:41</span><svg><use href="/assets/icons.svg#i-status"/></svg></div>
+                <div class="veil"></div>
+                <div class="sheet">
+                  <div class="r-top">
+                    <svg class="icon"><use href="/assets/icons.svg#i-chevron-left"/></svg>
+                    <span class="r-steps"><i></i><i></i><i></i></span>
+                    <svg class="icon"><use href="/assets/icons.svg#i-x"/></svg>
+                  </div>
+                  <div class="s-pad">
+                    <div class="r-dish">
+                      <img class="s-photo" src="/assets/photos/durum.webp" alt="" width="360" height="360" loading="lazy">
+                      <div><p class="s-name">Adana Dürüm</p><p class="s-caption">Ocakbaşı Ali Usta</p></div>
+                    </div>
+                    <p class="r-ask">Nasıldı?</p>
+                    <div class="r-stars">
+                      <span class="r-star"><svg class="icon"><use href="/assets/icons.svg#i-star"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg></span>
+                      <span class="r-star"><svg class="icon"><use href="/assets/icons.svg#i-star"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg></span>
+                      <span class="r-star"><svg class="icon"><use href="/assets/icons.svg#i-star"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg></span>
+                      <span class="r-star"><svg class="icon"><use href="/assets/icons.svg#i-star"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg></span>
+                      <span class="r-star half"><svg class="icon"><use href="/assets/icons.svg#i-star"/></svg><svg class="icon"><use href="/assets/icons.svg#i-star-filled"/></svg></span>
+                    </div>
+                    <div class="r-score">
+                      <span class="r-hint">Yıldızlara dokun</span>
+                      <span class="r-result"><b>4.5</b><span>Harika</span></span>
+                    </div>
+                    <div class="r-field">
+                      <p class="r-label">Yorum <small>isteğe bağlı</small></p>
+                      <p class="r-input">Acısı tam kıvamında, lavaşı çıtır. Közlenmiş biber şart</p>
+                    </div>
+                    <div class="r-field">
+                      <p class="r-label">Fotoğraf <small>isteğe bağlı</small></p>
+                      <span class="r-photo-btn"><svg class="icon"><use href="/assets/icons.svg#i-camera"/></svg>Fotoğraf ekle</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Günlük: uygulamadaki pul ızgarası -->
+    <section id="gunluk" class="diary" aria-labelledby="gunluk-baslik">
+      <div class="wrap">
+        <div class="diary__head reveal">
+          <div>
+            <p class="step__num">03 · Günlük</p>
+            <h2 class="display" id="gunluk-baslik">Yediğin her şey <em>günlüğünde.</em></h2>
+          </div>
+          <p>Puanladığın her yemek günlüğüne bir pul olarak yapışır, ay ay birikir. Neyi nerede yediğini, neyi sevdiğini unutmazsın.</p>
+        </div>
+
+        <div class="month reveal"><h3>Ekim 2026</h3><span>6 pul</span></div>
         <ul class="stamps">
-          <li><img src="/assets/stamps/burger.webp" alt="Smash burger pulu, puan 4.5" width="520" height="520" loading="lazy"><p>Smash Burger</p></li>
-          <li><img src="/assets/stamps/pizza.webp" alt="Margherita pulu, puan 5.0" width="520" height="520" loading="lazy"><p>Margherita</p></li>
-          <li><img src="/assets/stamps/durum.webp" alt="Adana dürüm pulu, puan 4.5" width="520" height="520" loading="lazy"><p>Adana Dürüm</p></li>
-          <li><img src="/assets/stamps/baklava.webp" alt="Baklava pulu, puan 5.0" width="520" height="520" loading="lazy"><p>Baklava</p></li>
-          <li><img src="/assets/stamps/cheeseburger.webp" alt="Cheeseburger pulu, puan 4.0" width="520" height="520" loading="lazy"><p>Cheeseburger</p></li>
-          <li><img src="/assets/stamps/onion-burger.webp" alt="Soğanlı burger pulu, puan 3.5" width="520" height="520" loading="lazy"><p>Soğanlı Burger</p></li>
+          <li><img src="/assets/stamps/burger.webp" alt="Smash Burger pulu, puan 4.5" width="520" height="520" loading="lazy"><p>Smash Burger<small>Burger Atölyesi</small></p></li>
+          <li><img src="/assets/stamps/pizza.webp" alt="Margherita pulu, puan 5.0" width="520" height="520" loading="lazy"><p>Margherita<small>Fırın Napoli</small></p></li>
+          <li><img src="/assets/stamps/durum.webp" alt="Adana Dürüm pulu, puan 4.5" width="520" height="520" loading="lazy"><p>Adana Dürüm<small>Ocakbaşı Ali Usta</small></p></li>
+          <li><img src="/assets/stamps/baklava.webp" alt="Fıstıklı Baklava pulu, puan 5.0" width="520" height="520" loading="lazy"><p>Fıstıklı Baklava<small>Baklavacı Cemil</small></p></li>
+          <li><img src="/assets/stamps/cheeseburger.webp" alt="Cheeseburger pulu, puan 4.0" width="520" height="520" loading="lazy"><p>Cheeseburger<small>Köşe Burger</small></p></li>
+          <li><img src="/assets/stamps/onion-burger.webp" alt="Soğanlı Burger pulu, puan 3.5" width="520" height="520" loading="lazy"><p>Soğanlı Burger<small>Moda Burger</small></p></li>
           <li aria-hidden="true"><div class="slot"></div></li>
           <li aria-hidden="true"><div class="slot"></div></li>
         </ul>
       </div>
     </section>
 
-    <section class="end wrap">
-      <p class="end__line">Şimdilik İstanbul’da. <span>Yakında App Store’da.</span></p>
-      <p class="end__meta">Sorun, öneri, merhaba: <a href="mailto:destek@decouva.com">destek@decouva.com</a></p>
+    <section class="end wrap reveal" aria-labelledby="son">
+      <div>
+        <h2 class="display" id="son">Şimdilik İstanbul’da. <span>Yakında App&nbsp;Store’da.</span></h2>
+        <p class="end__meta">Sorun, öneri ya da merhaba: <a href="mailto:destek@decouva.com">destek@decouva.com</a></p>
+      </div>
+      <picture class="end__logo">
+        <source srcset="/assets/logo-vertical-on-dark.svg" media="(prefers-color-scheme: dark)">
+        <img src="/assets/logo-vertical-on-light.svg" alt="" width="220" height="242">
+      </picture>
     </section>
   </main>
 
