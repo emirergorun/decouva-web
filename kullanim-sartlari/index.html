@@ -5,37 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kullanım Şartları · Decouva</title>
   <meta name="description" content="Decouva kullanım şartları.">
-  <meta name="theme-color" content="#ff6b35">
+  <meta name="theme-color" content="#f3efe7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/style.css?v=3">
+  <link rel="stylesheet" href="/assets/style.css?v=4">
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="logo" href="/" aria-label="Decouva ana sayfa">
+  <a class="skip" href="#icerik">İçeriğe geç</a>
+
+  <header class="top">
+    <div class="wrap top__in">
+      <a class="top__logo" href="/" aria-label="Decouva ana sayfa">
         <picture>
           <source srcset="/assets/logo-on-dark.svg" media="(prefers-color-scheme: dark)">
-          <img src="/assets/logo-on-light.svg" alt="Decouva" width="108" height="28">
+          <img src="/assets/logo-on-light.svg" alt="Decouva" width="116" height="30">
         </picture>
       </a>
-      <nav>
+      <nav aria-label="Ana menü">
+        <a href="/#nasil">Nasıl işliyor</a>
         <a href="/destek">Destek</a>
       </nav>
     </div>
   </header>
 
-  <main class="wrap doc">
+  <main id="icerik" class="doc wrap">
     <!-- TASLAK (2.10, 14 Ekim 2026): 1–7 uygulamadaki metinle aynı
          (dishrate_mobile/lib/shared/widgets/terms_sheet.dart); 4. madde
          düzeltildi, 8–11 yeni. Avukat incelemesinden sonra kesinleşecek;
          değişen metin uygulamaya da işlenmeli (4.3). -->
-    <p class="draft">Bu metin taslaktır; hukuki incelemeden sonra kesinleşecektir.</p>
-
-    <h1>Kullanım Şartları</h1>
-    <p class="updated">Son güncelleme: Ekim 2026</p>
-
+    <header class="doc__head">
+      <p class="kicker">Belge</p>
+      <h1>Kullanım Şartları</h1>
+      <p class="doc__meta">Son güncelleme: Ekim 2026</p>
+      <p class="doc__note">Bu metin taslaktır; hukuki incelemeden sonra kesinleşecektir.</p>
+      <span class="doc__draft" aria-hidden="true">Taslak</span>
+    </header>
     <h2>1. Kabul</h2>
     <p>Decouva'yı kullanarak bu kullanım şartlarını kabul etmiş olursunuz. Şartları kabul etmiyorsanız uygulamayı kullanmayı bırakınız.</p>
 
@@ -68,16 +74,16 @@
 
     <h2>11. Uygulanacak Hukuk</h2>
     <p>Bu şartlar Türkiye Cumhuriyeti hukukuna tabidir. <span class="tbd">[Yetkili mahkeme ve icra daireleri avukatla netleşecek.]</span></p>
+  
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <span>© 2026 Decouva</span>
-      <nav>
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <span>© 2026 Decouva · İstanbul</span>
+      <nav aria-label="Alt menü">
         <a href="/destek">Destek</a>
-        <a href="/gizlilik">Gizlilik politikası</a>
+        <a href="/gizlilik">Gizlilik</a>
         <a href="/kullanim-sartlari" aria-current="page">Kullanım şartları</a>
-        <a href="mailto:destek@decouva.com">destek@decouva.com</a>
       </nav>
     </div>
   </footer>

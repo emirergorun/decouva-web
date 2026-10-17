@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Decouva · Restoranı değil, yemeği puanla</title>
-  <meta name="description" content="Decouva, yediğin yemekleri tek tek puanladığın kişisel yemek günlüğü. İstanbul'da en iyi yemeği bul, puanla, kaydet.">
-  <meta name="theme-color" content="#ff6b35">
+  <meta name="description" content="Decouva, yediğin yemekleri tek tek puanladığın yemek günlüğü. İstanbul’un en iyi yemeklerini bul, puanla, günlüğüne pul olarak ekle.">
+  <meta name="theme-color" content="#f3efe7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -15,53 +16,117 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/assets/style.css?v=3">
+  <link rel="preload" href="/assets/fonts/Urbanist-SemiBold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/assets/style.css?v=4">
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <span></span>
-      <nav>
+  <a class="skip" href="#icerik">İçeriğe geç</a>
+
+  <header class="top">
+    <div class="wrap top__in">
+      <a class="top__logo" href="/" aria-label="Decouva ana sayfa">
+        <picture>
+          <source srcset="/assets/logo-on-dark.svg" media="(prefers-color-scheme: dark)">
+          <img src="/assets/logo-on-light.svg" alt="Decouva" width="116" height="30">
+        </picture>
+      </a>
+      <nav aria-label="Ana menü">
+        <a href="#nasil">Nasıl işliyor</a>
         <a href="/destek">Destek</a>
       </nav>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <picture>
-        <source srcset="/assets/logo-on-dark.svg" media="(prefers-color-scheme: dark)">
-        <img class="logo-big" src="/assets/logo-on-light.svg" alt="Decouva" width="247" height="64">
-      </picture>
-      <h1>Restoranı değil, <span>yemeği</span> puanla.</h1>
-      <p class="lead">Bir restoranın kebabı efsane, salatası berbat olabilir. Decouva'da puan yemeğin kendisine verilir. Yediklerini puanla, kişisel yemek günlüğünü tut, şehrin en iyi yemeklerini keşfet.</p>
-      <span class="badge">Yakında App Store'da</span>
+  <main id="icerik">
+    <section class="hero wrap">
+      <div class="hero__text">
+        <p class="kicker">Yemek günlüğü · İstanbul</p>
+        <h1>Restoranı değil, <em>yemeği</em> puanla.</h1>
+        <p class="lead">Yediğin her yemeğe ayrı puan ver, günlüğüne pul olarak ekle. Şehrin en iyi yemeklerini, onları gerçekten yiyenlerin puanlarıyla bul.</p>
+        <div class="hero__cta">
+          <span class="inkstamp">Yakında App Store’da</span>
+          <a class="textlink" href="#nasil">Nasıl işliyor?</a>
+        </div>
+      </div>
+
+      <div class="collage" aria-hidden="true">
+        <img class="s1" src="/assets/stamps/burger.webp" alt="" width="520" height="520">
+        <img class="s2" src="/assets/stamps/baklava.webp" alt="" width="520" height="520">
+        <img class="s3" src="/assets/stamps/pizza.webp" alt="" width="520" height="520">
+        <img class="s4" src="/assets/stamps/durum.webp" alt="" width="520" height="520">
+        <svg class="postmark" viewBox="0 0 120 120">
+          <defs><path id="pm-arc" d="M 14 60 A 46 46 0 1 1 106 60"/></defs>
+          <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="3"/>
+          <circle cx="60" cy="60" r="37" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <text font-family="Plex Mono, monospace" font-size="10.5" font-weight="500" letter-spacing="2.2" fill="currentColor"><textPath href="#pm-arc" startOffset="50%" text-anchor="middle">İSTANBUL · DECOUVA</textPath></text>
+          <text x="60" y="65" text-anchor="middle" font-family="Plex Mono, monospace" font-size="14" font-weight="500" fill="currentColor">2026</text>
+        </svg>
+      </div>
     </section>
 
-    <section class="features" aria-label="Özellikler">
-      <div class="feature">
-        <h2>Keşfet</h2>
-        <p>Yakınındaki en çok sevilen yemekler, kategoriye ve ilçeye göre.</p>
+    <section id="nasil" class="how wrap">
+      <div>
+        <p class="kicker">Neden yemek?</p>
+        <h2>Bir restoranın kebabı efsane, salatası berbat olabilir.</h2>
+        <p>Restoranın puanı, menüsündeki her şeyin ortalaması. İyi olanı da kötü olanı da aynı sayıya karışır. Decouva’da puan yemeğin kendisine verilir; “Kadıköy’de en iyi mercimek çorbası nerede?” sorusunun cevabı, o çorbayı içenlerin puanlarında.</p>
+        <p>Puanladıkların günlüğünde birikir. Neyi nerede yediğini, neyi sevdiğini unutmazsın.</p>
       </div>
-      <div class="feature">
-        <h2>Puanla</h2>
-        <p>Yediğin her yemeğe ayrı puan ver, istersen yorum ve fotoğraf ekle.</p>
+
+      <figure class="receipt" aria-label="Decouva nasıl işliyor">
+        <div class="receipt__paper">
+          <p class="receipt__head">DECOUVA</p>
+          <p class="receipt__sub">NASIL İŞLİYOR · NO. 0001</p>
+          <hr>
+          <ol>
+            <li><span>01</span><span>Yemeği bul<small>Yakınındaki en sevilen yemekler, kategoriye ve ilçeye göre.</small></span></li>
+            <li><span>02</span><span>Puanla<small>Yediğine 0.5 ile 5.0 arası puan ver.</small></span></li>
+            <li><span>03</span><span>İstersen yaz<small>Kısa bir yorum, bir fotoğraf.</small></span></li>
+            <li><span>04</span><span>Pulu yapıştır<small>Yemek günlüğüne pul olarak eklenir.</small></span></li>
+          </ol>
+          <hr>
+          <p class="receipt__total"><span>TOPLAM</span><span>Yemeğin kendi puanı</span></p>
+          <p class="receipt__foot">AFİYET OLSUN · DECOUVA.COM</p>
+        </div>
+      </figure>
+    </section>
+
+    <section class="album wrap" aria-labelledby="album-baslik">
+      <div class="album__head">
+        <div>
+          <p class="kicker">Günlük</p>
+          <h2 id="album-baslik">Yediklerin, pul pul.</h2>
+        </div>
+        <p>Puanladığın her yemek günlüğüne bir pul olarak eklenir, ay ay birikir. Pula dokununca puanın, yorumun ve tarihi açılır; damgası üstünde.</p>
       </div>
-      <div class="feature">
-        <h2>Günlük</h2>
-        <p>Yediklerin tek yerde: favorilerin, istek listen ve damak zevkin.</p>
+
+      <div class="sheet-page">
+        <div class="sheet-page__bar"><span>Ekim 2026</span><span>6 pul</span></div>
+        <ul class="stamps">
+          <li><img src="/assets/stamps/burger.webp" alt="Smash burger pulu, puan 4.5" width="520" height="520" loading="lazy"><p>Smash Burger</p></li>
+          <li><img src="/assets/stamps/pizza.webp" alt="Margherita pulu, puan 5.0" width="520" height="520" loading="lazy"><p>Margherita</p></li>
+          <li><img src="/assets/stamps/durum.webp" alt="Adana dürüm pulu, puan 4.5" width="520" height="520" loading="lazy"><p>Adana Dürüm</p></li>
+          <li><img src="/assets/stamps/baklava.webp" alt="Baklava pulu, puan 5.0" width="520" height="520" loading="lazy"><p>Baklava</p></li>
+          <li><img src="/assets/stamps/cheeseburger.webp" alt="Cheeseburger pulu, puan 4.0" width="520" height="520" loading="lazy"><p>Cheeseburger</p></li>
+          <li><img src="/assets/stamps/onion-burger.webp" alt="Soğanlı burger pulu, puan 3.5" width="520" height="520" loading="lazy"><p>Soğanlı Burger</p></li>
+          <li aria-hidden="true"><div class="slot"></div></li>
+          <li aria-hidden="true"><div class="slot"></div></li>
+        </ul>
       </div>
+    </section>
+
+    <section class="end wrap">
+      <p class="end__line">Şimdilik İstanbul’da. <span>Yakında App Store’da.</span></p>
+      <p class="end__meta">Sorun, öneri, merhaba: <a href="mailto:destek@decouva.com">destek@decouva.com</a></p>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <span>© 2026 Decouva</span>
-      <nav>
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <span>© 2026 Decouva · İstanbul</span>
+      <nav aria-label="Alt menü">
         <a href="/destek">Destek</a>
-        <a href="/gizlilik">Gizlilik politikası</a>
+        <a href="/gizlilik">Gizlilik</a>
         <a href="/kullanim-sartlari">Kullanım şartları</a>
-        <a href="mailto:destek@decouva.com">destek@decouva.com</a>
       </nav>
     </div>
   </footer>

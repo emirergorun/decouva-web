@@ -5,37 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sayfa bulunamadı · Decouva</title>
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#ff6b35">
+  <meta name="theme-color" content="#f3efe7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-  <link rel="stylesheet" href="/assets/style.css?v=3">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/style.css?v=4">
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="logo" href="/" aria-label="Decouva ana sayfa">
+  <a class="skip" href="#icerik">İçeriğe geç</a>
+
+  <header class="top">
+    <div class="wrap top__in">
+      <a class="top__logo" href="/" aria-label="Decouva ana sayfa">
         <picture>
           <source srcset="/assets/logo-on-dark.svg" media="(prefers-color-scheme: dark)">
-          <img src="/assets/logo-on-light.svg" alt="Decouva" width="108" height="28">
+          <img src="/assets/logo-on-light.svg" alt="Decouva" width="116" height="30">
         </picture>
       </a>
-      <nav>
+      <nav aria-label="Ana menü">
+        <a href="/#nasil">Nasıl işliyor</a>
         <a href="/destek">Destek</a>
       </nav>
     </div>
   </header>
 
-  <main class="wrap doc">
-    <h1>Sayfa bulunamadı</h1>
-    <p>Aradığın sayfa burada değil. <a href="/">Ana sayfaya dön</a></p>
+  <main id="icerik" class="lost wrap">
+    <div class="lost__slot" aria-hidden="true"></div>
+    <div>
+      <p class="kicker">404</p>
+      <h1>Bu adreste pul yok.</h1>
+      <p>Aradığın sayfa taşınmış ya da hiç olmamış olabilir. <a href="/">Ana sayfaya dön</a></p>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <span>© 2026 Decouva</span>
-      <nav>
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <span>© 2026 Decouva · İstanbul</span>
+      <nav aria-label="Alt menü">
         <a href="/destek">Destek</a>
-        <a href="/gizlilik">Gizlilik politikası</a>
+        <a href="/gizlilik">Gizlilik</a>
         <a href="/kullanim-sartlari">Kullanım şartları</a>
       </nav>
     </div>
