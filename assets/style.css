@@ -74,7 +74,7 @@ a:hover { text-decoration-thickness: 2px; }
 @media (max-width: 640px) { .features { grid-template-columns: 1fr; } .hero { padding-top: 48px; } }
 
 /* Metin sayfaları */
-.doc { padding: 40px 0 56px; }
+.doc { padding-top: 40px; padding-bottom: 56px; } /* yatay boşluk .wrap’ten; kısaltma yazılırsa ezilir */
 .doc h1 { font-size: 34px; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 6px; }
 .doc .updated { color: var(--text-soft); font-size: 14px; margin: 0 0 28px; }
 .doc h2 { font-size: 21px; margin: 36px 0 8px; }
