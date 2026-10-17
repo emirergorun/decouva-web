@@ -1,9 +1,12 @@
 /* Decouva web sitesi (2.10). Dış kaynak yok: font ve görseller sitenin kendi
-   dosyaları, çerez ve analiz yok. Renkler uygulamanın paletinden. */
+   dosyaları, çerez ve analiz yok. Renkler uygulamanın paletinden.
+   Yazı ölçeği uygulamanınki (AppTextStyles, 17 Ekim): ağırlık en fazla 600
+   (başlık), 500 (etiket), 400 (gövde); gövde 15–16 px, satır yüksekliği 1.5.
+   Kalın (700) kullanılmaz — uygulamada da yok. */
 
 @font-face { font-family: "Urbanist"; font-weight: 400; font-display: swap; src: url("fonts/Urbanist-Regular.woff") format("woff"); }
 @font-face { font-family: "Urbanist"; font-weight: 600; font-display: swap; src: url("fonts/Urbanist-SemiBold.woff") format("woff"); }
-@font-face { font-family: "Urbanist"; font-weight: 700; font-display: swap; src: url("fonts/Urbanist-Bold.woff") format("woff"); }
+@font-face { font-family: "Urbanist"; font-weight: 500; font-display: swap; src: url("fonts/Urbanist-Medium.woff") format("woff"); }
 
 :root {
   --bg: #ffffff;
@@ -42,12 +45,13 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
 a { color: var(--brand-text); text-underline-offset: 3px; }
+strong, b, th { font-weight: 600; }
 a:hover { text-decoration-thickness: 2px; }
 
 .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
@@ -56,43 +60,43 @@ a:hover { text-decoration-thickness: 2px; }
 .site-header { border-bottom: 1px solid var(--line); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
 .site-header .logo img { height: 28px; width: auto; display: block; }
-.site-header nav a { color: var(--text-soft); text-decoration: none; font-weight: 600; font-size: 15px; margin-left: 18px; }
+.site-header nav a { color: var(--text-soft); text-decoration: none; font-weight: 500; font-size: 15px; margin-left: 18px; }
 .site-header nav a:hover, .site-header nav a[aria-current="page"] { color: var(--text); }
 
 /* Ana sayfa */
 .hero { padding: 72px 0 40px; }
 .hero .logo-big { height: 64px; width: auto; display: block; margin-bottom: 36px; }
-.hero h1 { font-size: clamp(34px, 7vw, 52px); line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 18px; font-weight: 700; }
+.hero h1 { font-size: clamp(30px, 6vw, 40px); line-height: 1.12; letter-spacing: -0.3px; margin: 0 0 16px; font-weight: 600; }
 .hero h1 span { color: var(--brand); }
-.hero p.lead { font-size: 19px; color: var(--text-soft); margin: 0 0 28px; max-width: 34em; }
-.badge { display: inline-block; background: var(--brand); color: #fff; font-weight: 700; font-size: 15px; padding: 10px 18px; border-radius: 999px; }
+.hero p.lead { font-size: 16px; line-height: 1.5; color: var(--text-soft); margin: 0 0 28px; max-width: 34em; }
+.badge { display: inline-block; background: var(--brand); color: #fff; font-weight: 500; font-size: 15px; padding: 10px 18px; border-radius: 999px; }
 
 .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 24px 0 56px; }
 .feature { background: var(--surface); border-radius: 16px; padding: 20px; }
-.feature h2 { font-size: 18px; margin: 0 0 6px; }
+.feature h2 { font-size: 16px; line-height: 1.3; font-weight: 600; margin: 0 0 6px; }
 .feature p { margin: 0; font-size: 15px; color: var(--text-soft); line-height: 1.5; }
 @media (max-width: 640px) { .features { grid-template-columns: 1fr; } .hero { padding-top: 48px; } }
 
 /* Metin sayfaları */
 .doc { padding-top: 40px; padding-bottom: 56px; } /* yatay boşluk .wrap’ten; kısaltma yazılırsa ezilir */
-.doc h1 { font-size: 34px; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 6px; }
-.doc .updated { color: var(--text-soft); font-size: 14px; margin: 0 0 28px; }
-.doc h2 { font-size: 21px; margin: 36px 0 8px; }
-.doc h3 { font-size: 17px; margin: 22px 0 4px; }
-.doc p, .doc li { color: var(--text); }
+.doc h1 { font-size: 26px; line-height: 1.15; letter-spacing: -0.3px; font-weight: 600; margin: 0 0 6px; }
+.doc .updated { color: var(--text-soft); font-size: 13px; margin: 0 0 28px; }
+.doc h2 { font-size: 21px; line-height: 1.2; letter-spacing: -0.2px; font-weight: 600; margin: 36px 0 8px; }
+.doc h3 { font-size: 16px; line-height: 1.3; font-weight: 600; margin: 22px 0 4px; }
+.doc p, .doc li { color: var(--text); font-size: 15px; }
 .doc ul { padding-left: 22px; }
 .doc li { margin: 4px 0; }
 .doc table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 12px 0; display: block; overflow-x: auto; }
 .doc th, .doc td { text-align: left; vertical-align: top; padding: 9px 10px; border-bottom: 1px solid var(--line); }
-.doc th { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-soft); }
+.doc th { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-soft); }
 
 /* Taslak şeridi ve yer tutucular */
-.draft { background: var(--note-bg); color: var(--note-text); font-size: 14px; padding: 10px 14px; border-radius: 10px; margin: 0 0 28px; }
+.draft { background: var(--note-bg); color: var(--note-text); font-size: 13px; padding: 10px 14px; border-radius: 10px; margin: 0 0 28px; }
 .tbd { background: var(--note-bg); color: var(--note-text); border-radius: 4px; padding: 0 4px; }
 
 /* SSS */
 details { border-bottom: 1px solid var(--line); padding: 14px 0; }
-details summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+details summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
 details summary::-webkit-details-marker { display: none; }
 details summary::after { content: "+"; color: var(--text-soft); font-weight: 400; font-size: 22px; line-height: 1; }
 details[open] summary::after { content: "–"; }
@@ -100,10 +104,10 @@ details p { margin: 10px 0 0; }
 
 .contact { background: var(--surface); border-radius: 16px; padding: 20px; margin: 8px 0 24px; }
 .contact p { margin: 0; }
-.contact a { font-weight: 700; font-size: 19px; }
+.contact a { font-weight: 600; font-size: 16px; }
 
 /* Alt bilgi */
-.site-footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--text-soft); font-size: 14px; }
+.site-footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--text-soft); font-size: 13px; }
 .site-footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between; }
 .site-footer nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .site-footer a { color: var(--text-soft); text-decoration: none; }
@@ -112,5 +116,5 @@ details p { margin: 10px 0 0; }
 @media (max-width: 420px) {
   .wrap { padding: 0 16px; }
   .site-header nav a { margin-left: 12px; font-size: 14px; }
-  .doc h1 { font-size: 28px; }
+  .doc h1 { font-size: 24px; }
 }
