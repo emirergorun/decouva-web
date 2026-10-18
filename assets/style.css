@@ -323,6 +323,36 @@ a:hover { text-decoration-color: currentColor; }
   .r-input::after { animation: none; }
 }
 
+/* İstek Listesi paneli (profile_screen.dart, _WishlistSheet); yukarı çekilmiş hali (0.9) */
+.w-sheet { top: calc(var(--pt) * 85); background: var(--surface); }
+.w-handle { display: block; width: calc(var(--pt) * 36); height: calc(var(--pt) * 4); margin: calc(var(--pt) * 12) auto calc(var(--pt) * 8); border-radius: 4px; background: var(--divider); }
+.w-head {
+  display: flex; align-items: center; gap: calc(var(--pt) * 8);
+  padding: calc(var(--pt) * 4) calc(var(--pt) * 20) calc(var(--pt) * 12);
+  border-bottom: max(1px, calc(var(--pt) * .5)) solid var(--divider);
+  font-size: calc(var(--pt) * 15); font-weight: 500;
+}
+.w-head .icon { font-size: calc(var(--pt) * 20); color: var(--text-2); }
+.w-head .s-caption { margin-left: auto; font-weight: 400; }
+.w-list { padding: calc(var(--pt) * 8) calc(var(--pt) * 16) 0; }
+.w-item {
+  margin-bottom: calc(var(--pt) * 8); padding: calc(var(--pt) * 12) calc(var(--pt) * 14) calc(var(--pt) * 10);
+  border-radius: calc(var(--pt) * 12); background: var(--surface); border: max(1px, calc(var(--pt) * .5)) solid var(--divider);
+}
+.w-item__row { display: flex; align-items: center; gap: calc(var(--pt) * 12); }
+.w-item__row .s-photo { flex: none; width: calc(var(--pt) * 40); height: calc(var(--pt) * 40); border-radius: calc(var(--pt) * 10); }
+.w-item__text { flex: 1; min-width: 0; }
+.w-item__text p:first-child { font-size: calc(var(--pt) * 15); line-height: 1.5; }
+.w-item__text .s-caption { margin-top: calc(var(--pt) * 2); }
+.w-item__remove { padding: 0 calc(var(--pt) * 8); font-size: calc(var(--pt) * 13); font-weight: 500; color: var(--text-2); white-space: nowrap; }
+.w-item__cta {
+  display: flex; align-items: center; justify-content: center; gap: calc(var(--pt) * 8);
+  height: calc(var(--pt) * 40); margin-top: calc(var(--pt) * 10);
+  border-radius: calc(var(--pt) * 12); border: max(1px, calc(var(--pt) * 1)) solid color-mix(in srgb, var(--accent) 50%, transparent);
+  color: var(--accent); font-size: calc(var(--pt) * 13); font-weight: 500;
+}
+.w-item__cta .icon { font-size: calc(var(--pt) * 16); }
+
 /* Kırpılmış telefon: alt kenarı bölüm çizgisinde kesilir */
 .crop { overflow: hidden; aspect-ratio: 417 / 640; }
 
@@ -411,9 +441,12 @@ a:hover { text-decoration-color: currentColor; }
 .step__text { align-self: center; padding-bottom: 40px; max-width: 30rem; }
 .step__num { font-size: 15px; font-weight: 600; color: var(--text-3); font-variant-numeric: tabular-nums; }
 .step h3 { margin-top: 12px; font-size: clamp(28px, 3vw, 38px); letter-spacing: -.025em; line-height: 1.1; }
-.step__text > p:not(.step__num) { margin-top: 16px; color: var(--text-2); }
+.step__text p:not(.step__num) { margin-top: 16px; color: var(--text-2); }
+.step__text > div + div { margin-top: 56px; }   /* 01 ve 02 aynı telefonu paylaşıyor */
+.step h3 em { font-style: normal; color: var(--accent); }
 .step .phone { width: min(100%, 380px); justify-self: center; }
 .step--flip .step__text { order: 2; }
+.how--after .step { margin-top: 128px; }   /* Günlük bandından sonra */
 
 /* ── Günlük bandı ────────────────────────────────────────────────────────── */
 .diary {
@@ -462,6 +495,7 @@ a:hover { text-decoration-color: currentColor; }
 .foot nav { display: flex; flex-wrap: wrap; gap: 0 4px; margin-left: -10px; }
 .foot a { display: flex; align-items: center; min-height: 44px; padding: 0 10px; color: var(--text-2); text-decoration: none; transition: color .2s; }
 .foot a:hover, .foot a[aria-current="page"] { color: var(--text); }
+.foot__note { flex-basis: 100%; font-size: 13px; color: var(--text-3); }
 
 /* ── Görünüme girerken (yalnız destekleyen tarayıcıda) ───────────────────── */
 @supports (animation-timeline: view()) {
@@ -545,6 +579,8 @@ a.group__row strong { color: var(--accent-text); }
   .step { margin-top: 72px; gap: 32px; }
   .step--flip .step__text { order: 0; }
   .step__text { padding-bottom: 0; }
+  .step__text > div + div { margin-top: 40px; }
+  .how--after .step { margin-top: 96px; }
   .step .phone { width: min(84%, 360px); }
   .diary { margin-top: 96px; padding-block: 88px 96px; }
   .end { grid-template-columns: minmax(0, 1fr); padding-top: 112px; padding-bottom: 120px; }
