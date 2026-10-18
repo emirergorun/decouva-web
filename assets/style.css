@@ -410,7 +410,7 @@ a:hover { text-decoration-color: currentColor; }
   gap: 48px 88px; align-items: start;
   padding-top: 24px; padding-bottom: 152px;
 }
-.why h2 { margin-top: 16px; font-size: clamp(36px, 4.6vw, 60px); }
+.why h2 { font-size: clamp(36px, 4.6vw, 60px); }
 .why__copy p:not(.eyebrow) { margin-top: 24px; color: var(--text-2); max-width: 30em; }
 .why__copy p + p:not(.eyebrow) { margin-top: 14px; }
 
@@ -429,9 +429,10 @@ a:hover { text-decoration-color: currentColor; }
 .ledger li.low .ledger__score { color: var(--text-3); }
 .ledger__note { margin-top: 16px; font-size: 14px; color: var(--text-3); }
 
-/* ── Nasıl işliyor ───────────────────────────────────────────────────────── */
+/* ── Neden Decouva ───────────────────────────────────────────────────────── */
 .how > header { max-width: 40rem; }
-.how h2 { margin-top: 16px; font-size: clamp(36px, 4.6vw, 60px); }
+.how h2 { font-size: clamp(36px, 4.6vw, 60px); }
+.how h2 em { font-style: normal; color: var(--accent); }
 .step {
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 40px 88px; align-items: end;
@@ -439,11 +440,9 @@ a:hover { text-decoration-color: currentColor; }
   border-bottom: 1px solid var(--divider);
 }
 .step__text { align-self: center; padding-bottom: 40px; max-width: 30rem; }
-.step__num { font-size: 15px; font-weight: 600; color: var(--text-3); font-variant-numeric: tabular-nums; }
-.step h3 { margin-top: 12px; font-size: clamp(28px, 3vw, 38px); letter-spacing: -.025em; line-height: 1.1; }
-.step__text p:not(.step__num) { margin-top: 16px; color: var(--text-2); }
-.step__text > div + div { margin-top: 56px; }   /* 01 ve 02 aynı telefonu paylaşıyor */
-.step h3 em { font-style: normal; color: var(--accent); }
+.step h3 { font-size: clamp(28px, 3vw, 38px); letter-spacing: -.025em; line-height: 1.1; }
+.step__text p { margin-top: 16px; color: var(--text-2); }
+.step__text > div + div { margin-top: 56px; }   /* ilk iki madde aynı telefonu paylaşıyor */
 .step .phone { width: min(100%, 380px); justify-self: center; }
 .step--flip .step__text { order: 2; }
 .how--after .step { margin-top: 128px; }   /* Günlük bandından sonra */
@@ -456,7 +455,7 @@ a:hover { text-decoration-color: currentColor; }
   padding-block: 104px 120px;
 }
 .diary__head { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 20px 88px; align-items: end; }
-.diary h2 { margin-top: 12px; font-size: clamp(36px, 4.6vw, 60px); }
+.diary h2 { font-size: clamp(36px, 4.6vw, 60px); }
 .diary h2 em { font-style: normal; color: var(--accent); }
 .diary__head > p { color: var(--text-2); max-width: 30em; }
 .month { display: flex; justify-content: space-between; align-items: baseline; margin-top: 64px; padding-bottom: 14px; border-bottom: 1px solid var(--divider); }
