@@ -486,7 +486,7 @@ a:hover { text-decoration-color: currentColor; }
 .end h2 span { display: block; color: var(--text-3); }
 .end__meta { margin-top: 32px; font-size: 18px; color: var(--text-2); }
 .end__meta a { font-weight: 600; }
-.end__logo img { width: clamp(150px, 18vw, 220px); }
+.end__logo img { width: clamp(137px, 16.4vw, 201px); }   /* v2 logo: v1 yüksekliği korunur */
 
 /* ── Alt şerit ───────────────────────────────────────────────────────────── */
 .foot { border-top: 1px solid var(--divider); }
@@ -584,7 +584,7 @@ a.group__row strong { color: var(--accent-text); }
   .diary { margin-top: 96px; padding-block: 88px 96px; }
   .end { grid-template-columns: minmax(0, 1fr); padding-top: 112px; padding-bottom: 120px; }
   .end__logo { order: -1; }
-  .end__logo img { width: 140px; }
+  .end__logo img { width: 128px; }
   .help__aside, .toc { position: static; }
   .help__index, .group__label { display: none; }
   .toc { display: none; }
